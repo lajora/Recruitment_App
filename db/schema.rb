@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_164811) do
+ActiveRecord::Schema.define(version: 2022_11_09_171507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,20 @@ ActiveRecord::Schema.define(version: 2022_11_08_164811) do
     t.string "stage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "job_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["job_id"], name: "index_applications_on_job_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "application_id", null: false
+    t.index ["application_id"], name: "index_comments_on_application_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -39,6 +47,8 @@ ActiveRecord::Schema.define(version: 2022_11_08_164811) do
     t.string "working_hours"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -61,4 +71,9 @@ ActiveRecord::Schema.define(version: 2022_11_08_164811) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applications", "jobs"
+  add_foreign_key "applications", "users"
+  add_foreign_key "comments", "applications"
+  add_foreign_key "comments", "users"
+  add_foreign_key "jobs", "users"
 end

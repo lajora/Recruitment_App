@@ -15,7 +15,7 @@
             </div>
             <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
                 id="bs-example-navbar-collapse-1">
-                <li><%= link_to "Jobs", '#' %></li>
+                <li><%= link_to "Jobs", jobs_index_path %></li>
                 <% if user_signed_in? %>
                     <li><%= link_to "Dashboard", '#' %></li>
                     <li class="dropdown">
