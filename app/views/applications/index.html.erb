@@ -1,2 +1,10 @@
-<h1>Applications#index</h1>
-<p>Find me in app/views/applications/index.html.erb</p>
+<% @applications.each do |application| %>
+    <div class="card-application">
+        <div class="card-application-infos">
+            <h1><%= application.job_id %></h1>
+            <h3><%= application.status %></h3>
+            <h3><%= application.stage %></h3>
+            <p><%= application.user_id%></p>
+        </div>
+    </div>
+<% end %>
