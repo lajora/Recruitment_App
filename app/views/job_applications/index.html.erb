@@ -1,0 +1,10 @@
+<% @job_applications.each do |job_application| %>
+    <div class="card-job_application">
+        <div class="card-job_application-infos">
+            <h1><%= job_application.job_id %></h1>
+            <h3><%= job_application.status %></h3>
+            <h3><%= job_application.stage %></h3>
+            <p><%= job_application.user_id%></p>
+        </div>
+    </div>
+<% end %>
