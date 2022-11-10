@@ -8,7 +8,6 @@
     margin-right: 10px;
     font-size: 1.7em;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
     font-weight: bold;
@@ -16,4 +15,14 @@
 #logo:hover {
     color: #fff;
     text-decoration: none;
+}
+
+header {
+    a {
+        color: rgb(31, 151, 245)!important;
+        transition: 0.3s all!important;
+        font-weight: bold;
+    }
+    background-color: white!important;
+    border-bottom: 0.6px solid rgb(31, 151, 245)!important;
 }
