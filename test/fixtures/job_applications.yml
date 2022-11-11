@@ -3,6 +3,7 @@
 one:
   status: MyString
   stage: MyString
+  user: lara
 
 two:
   status: MyString
