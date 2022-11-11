@@ -1,10 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+jaone:
   status: MyString
   stage: MyString
   user: lara
+  job: one
 
-two:
-  status: MyString
-  stage: MyString
+# two:
+#   status: MyString
+#   stage: MyString

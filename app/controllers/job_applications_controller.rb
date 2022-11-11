@@ -1,12 +1,12 @@
 class JobApplicationsController < ApplicationController
 
   def index
-    @job_applications = JobApplication.all.where(user_id: current_user).order("job_application.created_by ASC")
+    @job_applications = JobApplication.all.where(user_id: current_user).order("job_applications.created_at ASC")
   end
 
   def show
-    @job_application = JobApplication.find(params[:id])
-    @job = @job_application.job
+    @job_application = JobApplication.find(params[:job_application_id])
+    @candidate = @job_application.user
   end
 
   def created
