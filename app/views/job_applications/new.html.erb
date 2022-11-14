@@ -1,0 +1,11 @@
+<h1>Please fill in the form</h1>
+
+<% simple_form_for @job_application do |f| %>
+    <%= f.input :first_name, hint: 'First name'%>
+    <%= f.input :last_name, hint: 'Last name'%>
+    <%= f.input :email, hint: 'Your Email'%>
+    <%= f.input :years_of_experience, hint: 'How many years of experience do you have?'%>
+    <%= f.input :availability, hint: 'How many hours per day do you want to work?'%>  
+    <%= f.input :salary_expectations, hint: 'What are your salary expectations?'%>
+    <%= f.submit :submit %>
+<% end %>
