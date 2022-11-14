@@ -6,8 +6,11 @@ class JobApplicationsController < ApplicationController
 
   def show
     @job_application = JobApplication.find(params[:job_application_id])
-    @candidate = @job_application.user
   end
+
+  def new
+    @job_application = JobApplication.new
+  end 
 
   def create
     @job = Job.find(params[:job_id])

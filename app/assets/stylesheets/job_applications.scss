@@ -1,0 +1,41 @@
+// Place all the styles related to the Applications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    margin-top: 51px !important;
+}
+
+.container-job_application h1 {
+    text-align: center;
+    padding: 15px;
+    color: #1f97f5
+}
+.card-job_application {
+    overflow: hidden;
+    height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .card-job_application h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #1f97f5
+  }
+  
+  .card-job_application p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  .card-job_application .card-job_application-infos {
+    padding: 16px;
+  }
