@@ -9,7 +9,7 @@ class JobApplicationsController < ApplicationController
     @candidate = @job_application.user
   end
 
-  def created
+  def create
     @job = Job.find(params[:job_id])
     @job_application = JobApplication.new(job_application_params)
     @job_application.job = @job
