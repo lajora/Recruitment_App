@@ -1,13 +1,15 @@
 <div class="container-job">
     <h1>Jobs</h1>
     <% @jobs.each do |job| %>
-        <div class="card-job">
-            <div class="card-job-infos">
-                <h2><%= job.title %></h2>
-                <p>Location: <%= job.location %></p>
-                <p><%= job.description%></p>
+        <%= link_to job_path(job), class:"card-links" do %>
+            <div class="card-job">
+                <div class="card-job-infos">
+                    <h2><%= job.title %></h2>
+                    <p>Location: <%= job.location %></p>
+                    <p><%= job.description%></p>
+                </div>
             </div>
-        </div>
+        <% end %>
     <% end %>
 </div>
 

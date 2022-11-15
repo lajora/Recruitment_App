@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   #user 
   resources :jobs, only: [:index, :show] do
-    resources :job_applications, only: [:create]
+    resources :job_applications, only: [:new, :create]
   end 
   resources :job_applications, only: [:index, :show]
 end

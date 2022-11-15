@@ -19,6 +19,7 @@ body {
     align-items: center;
     margin-left: 100px;
     margin-right: 100px;
+    margin-bottom: 15px;
   }
   
   .card-job_application h2 {
@@ -38,4 +39,19 @@ body {
   
   .card-job_application .card-job_application-infos {
     padding: 16px;
+  }
+
+//  job application form
+  .container-form-group {
+    padding: 15px;
+    color: #1f97f5
+  }
+  h3 {
+    text-align: center;
+    padding: 15px;
+    color: #1f97f5
+  }
+  .form-group {
+    margin-left: 100px;
+    margin-right: 100px
   }
