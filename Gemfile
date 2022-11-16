@@ -26,6 +26,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'rails-controller-testing'
 gem 'simple_form'
 
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
