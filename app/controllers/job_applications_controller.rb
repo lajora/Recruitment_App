@@ -17,6 +17,7 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.new(job_application_params)
     @job_application.job = @job
     @job_application.user = current_user
+    
     if @job_application.save!
       redirect_to jobs_path
     else
@@ -27,6 +28,6 @@ class JobApplicationsController < ApplicationController
   private
   
   def job_application_params
-    params.require(:job_application).permit(:user_id)
+    params.require(:job_application).permit(:user_id, :job_id)
   end
 end

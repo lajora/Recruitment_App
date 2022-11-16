@@ -44,13 +44,14 @@ body {
 //  job application form
   .container-form-group {
     padding: 15px;
-    color: #1f97f5
+    color: #1f97f5;
+    h3 {
+      text-align: center;
+      padding: 15px;
+      color: #1f97f5
+    }
   }
-  h3 {
-    text-align: center;
-    padding: 15px;
-    color: #1f97f5
-  }
+  
   .form-group {
     margin-left: 100px;
     margin-right: 100px

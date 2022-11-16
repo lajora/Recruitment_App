@@ -19,7 +19,8 @@
             <br>
             <li>Salary: €<%= @job.salary %>/hour</li>
         </ul>
-        <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path %></div>
+        <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
     </div>
     
 </div>
+
