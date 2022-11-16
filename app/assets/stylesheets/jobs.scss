@@ -36,3 +36,28 @@
   .card-job .card-job-infos {
     padding: 16px;
   }
+
+  .job-show-container {
+    margin-top: 100px;
+    border: 1px solid rgb(229,229,229);
+    width: 900px;
+    
+    .apply-button {
+      margin-top: 36px;
+      margin-bottom: 44px;
+      text-align: center;
+      a {
+        font-size: 17px;
+        color: white;
+        background-color: rgb(31, 151, 245);
+        padding: 17px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.12s;
+        &:hover {
+          background-color:rgb(75, 168, 238);
+        }
+      }
+    }
+  }
