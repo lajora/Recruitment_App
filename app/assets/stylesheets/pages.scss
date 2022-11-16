@@ -5,7 +5,7 @@
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),image-url('background.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 92.5vh;
+    padding-bottom: 72px;
     
     .container {
         padding-top: 50px;
@@ -13,14 +13,17 @@
         h1 {
             font-weight: bold;
             font-size: 43px;
+            
         }
         .blue {
             color: rgb(31, 151, 245);
         }
+         h2{
+            font-weight: bold;
+        }
+        
     }
     .flex-container {
-        display: flex;
-        justify-content: space-evenly;
         a {
             font-size: 19px;
             color: white;
@@ -31,4 +34,20 @@
             text-decoration: none;
         }
     }
+}
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.left-box, .right-box {
+    width: 50%;
+    padding-top: 20px;
+    a {
+        text-decoration: none;
+        color:rgb(31, 151, 245);
+    }
+    
+    
 }
