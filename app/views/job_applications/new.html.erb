@@ -1,31 +1,53 @@
-<div class="container-form-group">
 <h3>Please fill in the form</h3>
-    <form>
-    <div class="form-group">
-        <label for="exampleInputFirstName1">First Name</label>
-        <input type="first_name" class="form-control" id="exampleInputFirstName1" aria-describedby="emailHelp" placeholder="Enter your first name">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputLastName1">Last Name</label>
-        <input type="last_name" class="form-control" id="exampleInputLastName1" aria-describedby="emailHelp" placeholder="Enter your last name">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputYearsOfExperience1">Years of experience</label>
-        <input type="YearsOfExperience" class="form-control" id="exampleInputYearsOfExperience1" placeholder="Please enter a number">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputYearsOfExperience1">Availability</label>
-        <input type="YearsOfExperience" class="form-control" id="exampleInputYearsOfExperience1" placeholder="Morning/Day/Night Shift">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputCV1">CV</label>
-        <input type="CV" class="form-control" id="exampleInputCV1" placeholder="Upload Document">
-    </div>
 
-    <button type="submit" class="btn btn-primary">Apply</button>
-    </form>
-</div>
+# <div class="container-form-group">
+#     <form>
+#     <div class="form-group">
+#         <label for="exampleInputFirstName1">First Name</label>
+#         <input type="first_name" class="form-control" id="exampleInputFirstName1" aria-describedby="emailHelp" placeholder="Enter your first name">
+#     </div>
+#     <div class="form-group">
+#         <label for="exampleInputLastName1">Last Name</label>
+#         <input type="last_name" class="form-control" id="exampleInputLastName1" aria-describedby="emailHelp" placeholder="Enter your last name">
+#     </div>
+#     <div class="form-group">
+#         <label for="exampleInputEmail1">Email address</label>
+#         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+#     </div>
+#     <div class="form-group">
+#         <label for="exampleInputYearsOfExperience1">Years of experience</label>
+#         <input type="YearsOfExperience" class="form-control" id="exampleInputYearsOfExperience1" placeholder="Please enter a number">
+#     </div>
+#     <div class="form-group">
+#         <label for="exampleInputYearsOfExperience1">Availability</label>
+#         <input type="YearsOfExperience" class="form-control" id="exampleInputYearsOfExperience1" placeholder="Morning/Day/Night Shift">
+#     </div>
+#     <div class="form-group">
+#         <label for="exampleInputCV1">CV</label>
+#         <input type="CV" class="form-control" id="exampleInputCV1" placeholder="Upload Document">
+#     </div>
+
+#     <button type="submit" class="btn btn-primary">Apply</button>
+#     </form>
+# </div>
+
+<%=form_with(model:@job_application,local:true)do|f|%>
+    <%=f.label:first_name%>
+    <%=f.text_field:first_name%>
+    <%=f.label:last_name%>
+    <%=f.text_field:last_name%>
+    <%=f.label:email%>
+    <%=f.text_field:email%>
+    <%=f.label:years_of_experience%>
+    <%=f.text_field:years_of_experience%>
+    <%=f.label:availability%>
+    <%=f.text_field:availability%>
+    <%=f.label:years_of_experience%>
+    <%=f.text_field:years_of_experience%>
+    <%=f.label :document%>
+    <%=f.input :document, as: :file%>
+    <%= form.submit %>
+<% end %>
+    
+
+
