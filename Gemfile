@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'rails-controller-testing'
 gem 'simple_form'
+gem "paperclip", "~> 6.0.0"
 
 
 
