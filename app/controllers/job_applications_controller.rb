@@ -1,5 +1,5 @@
 class JobApplicationsController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @job_applications = JobApplication.all.where(user_id: current_user).order("job_applications.created_at ASC")
   end
