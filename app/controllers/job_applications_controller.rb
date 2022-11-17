@@ -26,6 +26,7 @@ class JobApplicationsController < ApplicationController
     end
   end
 
+  
   private
   
   def job_application_params
