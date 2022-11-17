@@ -1,13 +1,20 @@
 <div class="home-container">
     <div class="container">
         <h1>Welcome to <span class="blue">Jobstantial</span></h1>
-        <h3>Jobstancialcommits to find you consistent work with renowned companies for you to enjoy professional stability</h3>
+        <h3>Jobstancial commits to find you consistent work with renowned companies for you to enjoy professional stability</h3>
         </div>
 
     <div class="container flex-container">
-        <%= link_to "Find jobs", jobs_path %>
         <% if !user_signed_in? %>
             <%= link_to "Create your account", new_user_registration_path %>
+            <%= link_to "Find Jobs", jobs_path %>
+        <% else %>
+            <% if current_user.admin? %>
+                <%= link_to "Posted Jobs", jobs_path %>
+                <%= link_to "Create a new Job", new_job_path %>
+            <% else %>
+                <%= link_to "Find Jobs", jobs_path %>
+            <% end %>
         <% end %>
     </div>
 </div>
