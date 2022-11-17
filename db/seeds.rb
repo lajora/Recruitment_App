@@ -22,10 +22,10 @@ marc = User.create(first_name: "Marc", last_name: "Reinaldo",
 puts 'Creating admins'
 lara = User.create(first_name: "Lara", last_name: "Keen",
             email: "lara.keen@example.com", password: "foobar",
-            password_confirmation: "foobar")
+            password_confirmation: "foobar", admin: true)
 victor = User.create(first_name: "Victor", last_name: "Benito",
             email: "victor.benito@example.com", password: "foobar",
-            password_confirmation: "foobar")
+            password_confirmation: "foobar", admin:true)
 
 #jobs
 puts 'Creating jobs'

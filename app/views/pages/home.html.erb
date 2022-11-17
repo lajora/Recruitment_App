@@ -6,7 +6,9 @@
 
     <div class="container flex-container">
         <%= link_to "Find jobs", jobs_path %>
-        <%= link_to "Create your account", new_user_registration_path %>
+        <% if !user_signed_in? %>
+            <%= link_to "Create your account", new_user_registration_path %>
+        <% end %>
     </div>
 </div>
     <div class="container flex-container">
