@@ -19,8 +19,13 @@
             <br>
             <li>Salary: €<%= @job.salary %>/hour</li>
         </ul>
-        <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
+        <% if !current_user.admin? %>
+            <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
+        <% end %>
     </div>
     
 </div>
-
+<% if current_user.admin? %>
+    <br>
+    <%= render 'admins/candidates' %>
+<% end %>
