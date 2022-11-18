@@ -11,4 +11,19 @@ class JobApplicationTest < ActiveSupport::TestCase
   test 'should be valid' do
    @job_application.valid?
   end
+
+  test 'document should be present' do 
+    @job_application.document_content_type = "    "
+    assert_not @job_application.valid?
+  end 
+
+  test 'years_of_experience should be present' do 
+    @job_application.years_of_experience = "     "
+    assert_not @job_application.valid?
+  end
+
+  test 'availability should be present' do
+    @job_application.availability = "   "
+    assert_not @job_application.valid?
+  end 
 end
