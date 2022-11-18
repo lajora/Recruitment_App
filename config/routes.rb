@@ -5,8 +5,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
  
   resources :jobs do
-    resources :job_applications
+    resources :job_applications 
+    
   end
   
-  resources :job_applications, only: [:index, :show]
+  resources :job_applications, only: [:index, :show] do 
+    patch '/next_step', to:'job_applications#go_next_stage', on: :member
+    patch '/previous_step', to:'job_applications#go_previous_stage', on: :member
+    
+  end
+  
 end
