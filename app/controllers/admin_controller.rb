@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-before_filter :authorized?
+before_action :authorized?
 
 # methods
   
