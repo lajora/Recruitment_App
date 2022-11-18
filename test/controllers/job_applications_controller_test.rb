@@ -1,14 +1,22 @@
 require "test_helper"
 
 class JobApplicationsControllerTest < ActionDispatch::IntegrationTest
-
-  test "should get index" do
-    get job_job_applications_path(:job_id)
+  include Devise::Test::IntegrationHelpers
+  setup do
+    get '/users/sign_in'
+    sign_in users(:user_001)
+    post user_session_url
+    follow_redirect!
     assert_response :success
   end
 
-  test "should get show" do
-    get job_job_application_path(:job_id, :job_application_id) # !!!!we need to change path name because too similar to index!!!!
+  test "should get index" do
+    get job_job_applications_path(users)
+    assert_response :success
+  end
+
+  test "should get new" do 
+    get job_job_applications_path(jobs)
     assert_response :success
   end
 end

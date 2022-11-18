@@ -6,9 +6,9 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     get root_path
     assert_template 'pages/home'
     assert_select "a[href=?]", root_path
-    # assert_select "a[href=?]", jobs_index_path
-    # assert_select "a[href=?]", jobs_show_path
-    # assert_select "a[href=?]", job_applications_index_path
-    # assert_select "a[href=?]", job_applications_show_path
+    assert_select "a[href=?]", jobs_path(jobs)
+    assert_select "a[href=?]", job_path(jobs)
+    assert_select "a[href=?]", job_job_applications_path(users)
+    assert_select "a[href=?]", job_job_application_path(jobs)
   end
 end
