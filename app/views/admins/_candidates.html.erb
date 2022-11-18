@@ -1,5 +1,12 @@
 <div class="container">
     <h2>Candidates</h2>
+    <table>
+                    <th>Application recieved</th>
+                    <th>Screening call</th>
+                    <th>Technical test</th>
+                    <th>Interview</th>
+                    <th>Hired</th>
+    </table>
         <% @job.job_applications.each do |job_application| %>
             
             <div class="card-job_application">

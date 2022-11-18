@@ -20,16 +20,16 @@
             <li>Salary: €<%= @job.salary %>/hour</li>
         </ul>
         <% if !user_signed_in? %>
-            <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
+            <div class = "apply-button"><%= link_to "Start your application", new_job_job_application_path(@job) %></div>
         <% else %>
             <% if !current_user.admin? %>
                 <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
             <% end %>
             <% if current_user.admin? %>
                 <br>
+                
                 <%= render 'admins/candidates' %>
             <% end %>
         <% end %>
     </div>
-    
 </div>
