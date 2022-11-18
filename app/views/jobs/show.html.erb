@@ -20,7 +20,7 @@
             <li>Salary: €<%= @job.salary %>/hour</li>
         </ul>
         <% if !user_signed_in? %>
-            <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
+            <div class = "apply-button"><%= link_to "Start your application", new_job_job_application_path(@job) %></div>
         <% else %>
             <% if !current_user.admin? %>
                 <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
@@ -29,6 +29,7 @@
                 <div class = "edit-button"><%= link_to "Edit", edit_job_path %></div>
                 <div class = "delete-button"><%= link_to "Delete", job_path(@job), method: :delete%></div>
                 <br>
+                
                 <%= render 'admins/candidates' %>
             <% end %>
         <% end %>

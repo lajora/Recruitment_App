@@ -1,28 +1,29 @@
 
-<div class="container-form-group">
-<h3>Please fill in the form</h3>
-    <%=form_with model: @job_application, local: true, url: job_job_applications_path, method: :post do |f|%>
-        <div class="form-group">
-            <%=f.label:years_of_experience%>
-            <%=f.text_field:years_of_experience%>
-        </div>
-        <div class="form-group">
-            <%=f.label:availability%>
-            <%=f.text_field:availability%>
-        </div>  
-        <div class="form-group">
-            <%=f.label:salary_expectation%>
-            <%=f.text_field:salary_expectation%>
-        </div>
-        <div class="form-group">
-            <%=f.label :document%>
-            <%=f.file_field :document, as: :file%>
-        </div>
-        <div class="form-group">
-            <%= f.submit %>
-        </div>  
-    <% end %>
-</div>
+    <div class="container-form-group">
+    <h3>Please fill in the form</h3>
+        <%=form_with model: @job_application, local: true, url: job_job_applications_path, method: :post do |f|%>
+            <div class="form-group">
+                <%=f.label:years_of_experience%>
+                <%=f.text_field:years_of_experience%>
+            </div>
+            <div class="form-group">
+                <%=f.label:availability%>
+                <%=f.text_field:availability%>
+            </div>  
+            <div class="form-group">
+                <%=f.label:salary_expectation%>
+                <%=f.text_field:salary_expectation%>
+            </div>
+            <div class="form-group">
+                <%=f.label :document%>
+                <%=f.file_field :document, as: :file%>
+            </div>
+            <div class="form-group">
+                <%= f.submit %>
+            </div>  
+        <% end %>
+    </div>
+
     
 
 
