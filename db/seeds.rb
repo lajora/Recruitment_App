@@ -1,5 +1,9 @@
 require 'faker'
 
+JobApplication.destroy_all
+Job.destroy_all
+User.destroy_all
+
 #users
 puts 'Creating users'
 juan = User.create(first_name: "Juan", last_name: "Garcia",
