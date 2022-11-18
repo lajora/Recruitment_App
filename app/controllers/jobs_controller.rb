@@ -7,7 +7,8 @@ class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
     @job_applications = @job.job_applications
-
+    @stages = ['Application recieved', 'Screening call', 
+    "Technical test", 'Interview', 'Second Interview', 'Hired']
   end 
 
   def new

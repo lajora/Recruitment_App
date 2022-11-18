@@ -1,5 +1,4 @@
 require 'faker'
-
 JobApplication.destroy_all
 Job.destroy_all
 User.destroy_all
@@ -58,16 +57,16 @@ puts 'Creating job applications'
 
 job_application_1 = JobApplication.create(status: 'pending',
                     stage: 'Application recieved', user_id: juan.id, 
-                    job_id: 1)
+                    job_id: job1.id)
 
 job_application_2 = JobApplication.create(status: 'pending',
                     stage: 'Application recieved', user_id: juan.id, 
-                    job_id: 2)
+                    job_id: job2.id)
 
 job_application_3 = JobApplication.create(status: 'pending',
                     stage: 'Application recieved', user_id: lucia.id, 
-                    job_id: 1)
+                    job_id: job1.id)
 
 job_application_4 = JobApplication.create(status: 'pending',
                     stage: 'Application recieved', user_id: marc.id, 
-                    job_id: 1)
+                    job_id: job1.id)
