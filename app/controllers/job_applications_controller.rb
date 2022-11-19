@@ -1,6 +1,7 @@
 class JobApplicationsController < ApplicationController
   include ActionView::RecordIdentifier
   before_action :authenticate_user!
+  before_action :has_applied?, only: [:new, :create]
   def index
     @job_applications = JobApplication.all.where(user_id: current_user).order("job_applications.created_at ASC")
   end
@@ -47,5 +48,12 @@ class JobApplicationsController < ApplicationController
   
   def job_application_params
     params.require(:job_application).permit(:user_id, :years_of_experience, :availability, :document, :salary_expectation)
+  end
+
+  def has_applied?
+    @job = Job.find(params[:job_id])
+    if JobApplication.where(job_id: params[:job_id], user_id: current_user.id).any?
+      redirect_to job_path(@job), alert: "You already applied to this job"
+    end
   end
 end
