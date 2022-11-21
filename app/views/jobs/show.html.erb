@@ -24,6 +24,11 @@
         <% else %>
             <% if !current_user.admin? %>
                 <div class = "apply-button"><%= link_to "Apply now", new_job_job_application_path(@job) %></div>
+                <% if flash[:alert] %>
+                    <div id="alert">
+                    <%= flash[:alert] %> 
+                    </div>
+                <% end %>
             <% end %>
             <% if current_user.admin? %>
                 <div class = "edit-button"><%= link_to "Edit", edit_job_path %></div>

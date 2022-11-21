@@ -56,8 +56,27 @@ body {
     margin-left: 100px;
     margin-right: 100px
   }
+
+  form {
+    
+  }
+
+  .offer-buttons {
+    margin: 10px 0 10px 0 !important;
+    .accept-button {
+      color: green;
+      margin-right: 26px;
+      font-weight: bold;
+    }
+    .reject-button {
+      color: red;
+      margin-right: 26px;
+      font-weight: bold;
+    }
+
   .job-application-show-container {
     margin-top: 100px;
     border: 1px solid rgb(229,229,229);
     width: 900px;
+
   }

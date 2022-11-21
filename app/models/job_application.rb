@@ -7,7 +7,7 @@ class JobApplication < ApplicationRecord
     validates :status, inclusion: { in: %w(pending accepted rejected), 
             message: "%{value} is not a valid status" }
     validates :stage, inclusion: { in: ['Application recieved', 'Screening call', 
-            "Technical test", 'Interview', 'Second Interview', 'Hired']}
+            "Technical test", 'Interview', 'Second Interview', 'Send Offer', 'Hired', 'Offer Rejected']}
 
         def next_stage
                 case self.stage
@@ -20,14 +20,14 @@ class JobApplication < ApplicationRecord
                 when 'Interview'
                         'Second Interview'
                 when 'Second Interview'
-                        'Hired'
+                        'Send Offer'
                 end
         end
 
         def previous_stage
                 case self.stage
                 
-                when 'Hired'
+                when 'Send Offer'
                         'Second Interview'
                 when 'Second Interview'
                         "Interview"

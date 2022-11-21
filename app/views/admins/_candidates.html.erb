@@ -1,28 +1,29 @@
 
-    <h2>Candidates</h2>
-    <div class= "stages-container">
-        <% @stages.each do |actual_stage|%>
-            <div class="stage">
-                <h3><%= actual_stage%></h3>
-                <% @job_applications.where(stage: actual_stage, status: 'pending').each do |job_application| %>
-                    <div class="card-job_application">
-                        <%= content_tag :div, id: dom_id(job_application) do %>
-                        <div class="card-job_application-infos" >
-                            <h2><%= job_application.user.first_name %></h2>
-                            <p><%= job_application.status %></p>
-                            <p><%= job_application.stage %></p>
+    <h2><%=@job.job_applications.count - @job.job_applications.where(status: 'rejected').count%> Candidates</h2>
+    <%if @job.job_applications.count - @job.job_applications.where(status: 'rejected').count != 0%>
+        <div class= "stages-container">
+            <% @stages.each do |actual_stage|%>
+                <div class="stage">
+                    <h3><%= actual_stage%></h3>
+                    <% @job_applications.where(stage: actual_stage, status: 'pending').each do |job_application| %>
+                        <div class="card-job_application">
+                            <%= content_tag :div, id: dom_id(job_application) do %>
+                            <div class="card-job_application-infos" >
+                                <h2><%= job_application.user.first_name %></h2>
+                                <p><%= job_application.status %></p>
+                                <p><%= job_application.stage %></p>
+                            </div>
+                            <div class="stage-buttons">
+                                <%= link_to "Previous", previous_step_job_application_path(job_application), method: :patch%>
+                                <%= link_to "REJECT", reject_job_application_path(job_application), method: :patch, class: 'red'%>
+                                <%= link_to "Next", next_step_job_application_path(job_application), method: :patch%>
+                            </div>
+                            
+                            <%end%>
+                            
                         </div>
-                        <div class="stage-buttons">
-                            <%= link_to "Previous", previous_step_job_application_path(job_application), method: :patch%>
-                            <%= link_to "REJECT", reject_job_application_path(job_application), method: :patch, class: 'red'%>
-                            <%= link_to "Next", next_step_job_application_path(job_application), method: :patch%>
-                        </div>
-                        
-                        <%end%>
-                        
-                    </div>
-                <% end %>
-            </div>
-        <% end %>
-    </div>
- 
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+ <% end %>
