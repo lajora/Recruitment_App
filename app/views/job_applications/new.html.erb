@@ -1,5 +1,4 @@
 
-<%if !current_user.admin?%>
     <div class="container-form-group">
     <h3>Please fill in the form</h3>
         <%=form_with model: @job_application, local: true, url: job_job_applications_path, method: :post do |f|%>
@@ -24,9 +23,7 @@
             </div>  
         <% end %>
     </div>
-<%else%>
-    <h1>You are an admin</h1>
-<%end%>
+
     
 
 
