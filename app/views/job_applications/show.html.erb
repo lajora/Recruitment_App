@@ -1,2 +1,25 @@
-<h1></h1>
-<p>Find me in app/views/applications/show.html.erb</p>
+<div class="container job-application-show-container">
+    <div class="job-application-title">
+        <h2><strong><%= @job_application.user.first_name %> <%= @job_application.user.last_name %></strong> applied as <strong><%= @job_application.job.title %></strong></h2>
+    </div>
+    <br>
+    <div class="job-application-description">
+        <h4><strong>Description</strong></h4>
+        <h5>- Years of Experience: <%= @job_application.years_of_experience%></h5>
+        <h5>- Available to work: <%= @job_application.availability%></h5>
+        <h5>- Salary expectation per hour: € <%= @job_application.salary_expectation%></h5>
+    </div>
+    <br>
+    <div class="job-application-comment">
+        <h4><strong>Comments: </strong></h4>
+        <% @job_application.comments.each do |comment|%>
+            <div class="comment-line">
+                <% if !comment.user.nil?%>
+                    <p><strong>On <%= comment.created_at.to_date%> <%= comment.user.first_name%> said: </strong></p>
+                    <%= comment.content %>
+                <% end %>
+            </div>
+        <% end %>
+        <%= render "comments/form", comment: @comment%>
+    </div>
+</div>

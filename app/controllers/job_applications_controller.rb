@@ -7,7 +7,8 @@ class JobApplicationsController < ApplicationController
   end
 
   def show
-    @job_application = JobApplication.find(params[:job_application_id])
+    @job_application = JobApplication.find(params[:id])
+    @comment = @job_application.comments.build
   end
 
   def new

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
  
   resources :jobs do
-    resources :job_applications 
+    resources :job_applications, except: [:index, :show] 
     
   end
   
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     patch '/reject', to:'job_applications#reject', on: :member
     patch '/reject_offer', to:'job_applications#reject_offer', on: :member
     patch '/accept_offer', to:'job_applications#accept_offer', on: :member
+    resources :comments
   end
   
 end
