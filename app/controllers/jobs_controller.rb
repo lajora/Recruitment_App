@@ -8,7 +8,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @job_applications = @job.job_applications
     @stages = ['Application recieved', 'Screening call', 
-    "Technical test", 'Interview', 'Second Interview', 'Hired']
+    "Technical test", 'Interview', 'Second Interview', 'Send Offer']
   end 
 
   def new

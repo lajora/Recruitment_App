@@ -59,3 +59,17 @@ body {
   form {
     
   }
+
+  .offer-buttons {
+    margin: 10px 0 10px 0 !important;
+    .accept-button {
+      color: green;
+      margin-right: 26px;
+      font-weight: bold;
+    }
+    .reject-button {
+      color: red;
+      margin-right: 26px;
+      font-weight: bold;
+    }
+  }

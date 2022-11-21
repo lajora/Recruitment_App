@@ -34,6 +34,8 @@ class JobApplicationsController < ApplicationController
     if @job_application.save!
       if @job_application.stage == "Technical test"
         UserMailer.send_challenge(@job_application.user, @job_application).deliver_now
+      elsif @job_application.stage == "Send Offer"
+        UserMailer.send_offer(@job_application.user, @job_application).deliver_now
       end
       redirect_to job_path(@job, anchor: dom_id(@job_application))
     end
@@ -56,7 +58,24 @@ class JobApplicationsController < ApplicationController
     @job = Job.find(@job_application.job.id)
     @job_application.update(status: @job_application.reject_application)
     if @job_application.save!
+      UserMailer.reject_candidate(@job_application.user, @job_application).deliver_now
       redirect_to job_path(@job, anchor: dom_id(@job_application))
+    end
+  end
+
+  def accept_offer
+    @job_application = JobApplication.find(params[:id])
+    @job_application.update(status: 'accepted', stage: 'Hired')
+    if @job_application.save!
+      redirect_to job_applications_path
+    end
+  end
+
+  def reject_offer
+    @job_application = JobApplication.find(params[:id])
+    @job_application.update(status: 'rejected', stage: 'Offer Rejected')
+    if @job_application.save!
+      redirect_to job_applications_path
     end
   end
   private

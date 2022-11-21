@@ -1,14 +1,25 @@
 <div class="container-job_application">
-    <h1>Your Job Applications</h1>
-    <% @job_applications.each do |job_application| %>
-        <%= link_to job_applications_path(job_application), class:"card-links" do %>
+    <h1 style='color:black'>Your Job Applications</h1>
+    <% @job_applications.order(:status).each do |job_application| %>
             <div class="card-job_application">
                 <div class="card-job_application-infos">
                     <h3><%= job_application.job.title %></h3>
-                    <p><%= job_application.status %></p>
-                    <p><%= job_application.stage %></p>
+                    <% if job_application.status == 'rejected'%>
+                        <p style='color:red'><%= job_application.status.upcase %></p>
+                    <%elsif job_application.status == 'accepted'%>
+                        <p style='color:green'><%= job_application.status.upcase %></p>
+                    <%else%>
+                        <p><%= job_application.status.upcase %></p>
+                    <%end%>
+                    <p style='font-weight:bold'><%= job_application.stage %></p>
+                    <%if job_application.stage == 'Send Offer' && job_application.status == 'pending'%>
+                        <div class="offer-buttons">
+                            <%= link_to "ACCEPT OFFER", accept_offer_job_application_path(job_application), method: :patch, class: 'accept-button'%>
+                            <%= link_to "REJECT OFFER", reject_offer_job_application_path(job_application), method: :patch, class: 'reject-button'%>
+                    </div>
+                    <%end%>
                 </div>
+                
             </div>
         <% end %>
-    <% end %>
 </div>
