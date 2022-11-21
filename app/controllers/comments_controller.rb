@@ -1,24 +1,31 @@
 class CommentsController < ApplicationController
 
-  def create
-    # @application = Application.find(params[:application_id])
-    # authorize @Application
-    # @comment = Comment.new(comment_params)
-    # authorize @comment
-    # @comment.application = @application
-    # @comment.user = current_user
-    # if @comment.save
-    #   respond_to do |format|
-    #     format.html { redirect_to application_show_path(@application) }
-    #     format.json { render json: { message_html: render_to_string( partial: '/comments/comment.html.erb', locals: { comment: @comment })}}
-    #   end
-    # else
-    #   render 'application/show.html.erb'
-    # end
+  def index
+    @job_application = JobApplication.find(params[:job_application_id])
+    @comments = Comment.All
   end
 
-  # def comment_params
-  #   params.require(:comment).permit(:content)
-  # end
+  def new
+   @comment = Comment.new 
+  end 
+
+  def create
+    @job_application = JobApplication.find(params[:job_application_id])
+    @comment = Comment.new(comment_params)
+    @comment.job_application = @job_application
+    @comment.user = current_user
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to job_application_path(@job_application), notice: "Comment was successfully created." }
+      else
+        format.html { redirect_to job_application_path(@job_application) }
+      end
+    end
+  end
+
+  def comment_params
+    params.require(:comment).permit(:job_application_id, :user_id, :content)
+  end
 
 end
