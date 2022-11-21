@@ -42,12 +42,21 @@ job2 = Job.new(title: Faker::Job.title, description: 'Lorem ipsum dolor sit amet
             years_of_experience: rand(0..10), working_hours: "40 hours per week", 
             salary: rand(7..15), user_id: victor.id)
 job2.save
-job3 = Job.new(title: Faker::Job.title, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+job3 = Job.new(title: 'Ruby on Rails Developer (ROR)', description: 'Participate in the development of sites and applications, as well as the implementation of changes, all according to specifications.
+            Work with the whole team to continuously improve the techniques, processes and quality of developments.
+            Participate in the maintenance of the proper functioning of the sites ensuring the correction of errors.
+            Collaborate with a team of talented frontend and backend web developers to deliver timely, high quality web applications.
+            Work in a multi-disciplinary team mostly in an agile context.',
             location: Faker::Address.city, start_date: "23-04-2023", end_date: "25-05-2023",
             years_of_experience: rand(0..10), working_hours: "40 hours per week", 
             salary: rand(7..15), user_id: victor.id)
 job3.save     
-job4 = Job.new(title: Faker::Job.title, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+job4 = Job.new(title: 'Backend Node js.', description: 'Rebuilding of the group’s websites.
+            Creation of new sites and/or sites for new jurisdictions (countries).
+            Development of interfaces for new gaming providers.
+            Updating existing interfaces or protocols.
+            Development and maintenance of backend processes.
+            Development and maintenance of new frontend functionalities.',
             location: Faker::Address.city, start_date: "04-12-2022", end_date: "17-02-2023",
             years_of_experience: rand(0..10), working_hours: "40 hours per week", 
             salary: rand(7..15), user_id: lara.id)
@@ -65,8 +74,8 @@ job_application_2 = JobApplication.create(status: 'pending',
 
 job_application_3 = JobApplication.create(status: 'pending',
                     stage: 'Application recieved', user_id: lucia.id, 
-                    job_id: job1.id)
+                    job_id: job1.id, years_of_experience: 1, availability: 'nights', salary_expectation: 6)
 
 job_application_4 = JobApplication.create(status: 'pending',
                     stage: 'Application recieved', user_id: marc.id, 
-                    job_id: job1.id)
+                    job_id: job1.id, years_of_experience: 4, availability: 'mornings', salary_expectation: 3)
