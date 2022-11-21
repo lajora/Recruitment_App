@@ -32,6 +32,9 @@ class JobApplicationsController < ApplicationController
     @job = Job.find(@job_application.job.id)
     @job_application.update(stage: @job_application.next_stage)
     if @job_application.save!
+      if @job_application.stage == "Technical test"
+        UserMailer.send_challenge(@job_application.user, @job_application).deliver_now
+      end
       redirect_to job_path(@job, anchor: dom_id(@job_application))
     end
   end
@@ -41,6 +44,9 @@ class JobApplicationsController < ApplicationController
     @job = Job.find(@job_application.job.id)
     @job_application.update(stage: @job_application.previous_stage)
     if @job_application.save!
+      if @job_application.stage == "Technical test"
+        UserMailer.send_challenge(@job_application.user, @job_application).deliver_now
+      end
       redirect_to job_path(@job, anchor: dom_id(@job_application))
     end
   end
