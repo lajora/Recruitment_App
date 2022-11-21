@@ -32,12 +32,12 @@ victor = User.create(first_name: "Victor", last_name: "Benito",
 
 #jobs
 puts 'Creating jobs'
-job1 = Job.new(title: Faker::Job.title, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+job1 = Job.new(title: 'Backend Developer', description: 'You will develop new ways of handling a huge number of concurrent users on a massive and fast- growing data set. You will feel right at home with the likes of NodeJS, Mongo, Kafka, NiFi, DeltaLake, and AWS. As an expert in web technologies and databases, you’ll grow with us and get the freedom to realize breakthroughs and expand your track record.',
             location: Faker::Address.city, start_date: "14-11-2022", end_date: "25-01-2023",
             years_of_experience: rand(0..10), working_hours: "40 hours per week", 
             salary: rand(7..15), user_id: lara.id)
 job1.save
-job2 = Job.new(title: Faker::Job.title, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+job2 = Job.new(title: 'Python Software Engineer', description: 'The ideal candidate will have proven experience in multiple programming languages and paradigms, evolutionary architecture, monolith to microservice patterns, cloud platforms, and test automation.',
             location: Faker::Address.city, start_date: "08-01-2023", end_date: "08-03-2023",
             years_of_experience: rand(0..10), working_hours: "40 hours per week", 
             salary: rand(7..15), user_id: victor.id)
@@ -56,11 +56,11 @@ job4.save
 puts 'Creating job applications'
 
 job_application_1 = JobApplication.create(status: 'pending',
-                    stage: 'Application recieved', user_id: juan.id, 
+                    stage: 'Application recieved', years_of_experience: 2, availability: 'mornings', salary_expectation: 15, user_id: juan.id, 
                     job_id: job1.id)
 
 job_application_2 = JobApplication.create(status: 'pending',
-                    stage: 'Application recieved', user_id: juan.id, 
+                    stage: 'Application recieved', years_of_experience: 5, availability: 'evenings', salary_expectation: 40, user_id: juan.id, 
                     job_id: job2.id)
 
 job_application_3 = JobApplication.create(status: 'pending',

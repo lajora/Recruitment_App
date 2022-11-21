@@ -11,7 +11,7 @@
         <h4><strong>Description</strong></h4>
         <p><%= @job.description %></p>
         <ul>
-            <li>Contract duration: From <%= @job.start_date %> to <%= @job.end_date %></li>
+            <li>Contract duration: From <%= @job.start_date.to_date %> to <%= @job.end_date.to_date %></li>
             <br>
             <li>Required <%= @job.years_of_experience.to_i %> years of experience as a <%= @job.title %></li>
             <br>
