@@ -4,7 +4,7 @@
         <% @stages.each do |actual_stage|%>
             <div class="stage">
                 <h3><%= actual_stage%></h3>
-                <% @job_applications.where(stage: actual_stage).each do |job_application| %>
+                <% @job_applications.where(stage: actual_stage, status: 'pending').each do |job_application| %>
                     <div class="card-job_application">
                         <%= content_tag :div, id: dom_id(job_application) do %>
                         <div class="card-job_application-infos" >
@@ -14,11 +14,12 @@
                         </div>
                         <div class="stage-buttons">
                             <%= link_to "Previous", previous_step_job_application_path(job_application), method: :patch%>
-                            
+                            <%= link_to "REJECT", reject_job_application_path(job_application), method: :patch, class: 'red'%>
                             <%= link_to "Next", next_step_job_application_path(job_application), method: :patch%>
                         </div>
                         
                         <%end%>
+                        
                     </div>
                 <% end %>
             </div>

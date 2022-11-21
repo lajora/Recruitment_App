@@ -43,6 +43,15 @@ class JobApplicationsController < ApplicationController
       redirect_to job_path(@job, anchor: dom_id(@job_application))
     end
   end
+
+  def reject
+    @job_application = JobApplication.find(params[:id])
+    @job = Job.find(@job_application.job.id)
+    @job_application.update(status: @job_application.reject_application)
+    if @job_application.save!
+      redirect_to job_path(@job, anchor: dom_id(@job_application))
+    end
+  end
   private
   
   def job_application_params

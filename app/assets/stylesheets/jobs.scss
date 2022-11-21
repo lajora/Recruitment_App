@@ -94,6 +94,9 @@
 
   .stage-buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 193px;
+    .red {
+      color: red;
+    }
   }

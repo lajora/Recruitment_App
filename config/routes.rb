@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :job_applications, only: [:index, :show] do 
     patch '/next_step', to:'job_applications#go_next_stage', on: :member
     patch '/previous_step', to:'job_applications#go_previous_stage', on: :member
-    
+    patch '/reject', to:'job_applications#reject', on: :member
   end
   
 end

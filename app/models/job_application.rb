@@ -39,4 +39,8 @@ class JobApplication < ApplicationRecord
                         'Application recieved'
                 end
         end
+
+        def reject_application
+                self.status = 'rejected'
+        end
 end
