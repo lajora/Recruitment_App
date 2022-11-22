@@ -20,7 +20,9 @@ ActiveRecord::Schema.define(version: 2022_11_22_105503) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "application_id", null: false
     t.bigint "job_application_id", null: false
+    t.index ["application_id"], name: "index_comments_on_application_id"
     t.index ["job_application_id"], name: "index_comments_on_job_application_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 2022_11_22_105503) do
   end
 
   add_foreign_key "comments", "job_applications"
+  add_foreign_key "comments", "job_applications", column: "application_id"
   add_foreign_key "comments", "users"
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "job_applications", "users"
