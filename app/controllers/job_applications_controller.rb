@@ -8,7 +8,7 @@ class JobApplicationsController < ApplicationController
 
   def show
     @job_application = JobApplication.find(params[:id])
-    @comment = @job_application.comments.build
+    @remark = @job_application.remarks.build
   end
 
   def new

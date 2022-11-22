@@ -12,14 +12,14 @@
     <br>
     <div class="job-application-comment">
         <h4><strong>Comments: </strong></h4>
-        <% @job_application.comments.each do |comment|%>
+        <% @job_application.remarks.each do |remark|%>
             <div class="comment-line">
-                <% if !comment.user.nil?%>
-                    <p><strong>On <%= comment.created_at.to_date%> <%= comment.user.first_name%> said: </strong></p>
-                    <%= comment.content %>
+                <% if !remark.user.nil?%>
+                    <p><strong>On <%= remark.created_at.to_date%> <%= remark.user.first_name%> said: </strong></p>
+                    <%= remark.content %>
                 <% end %>
             </div>
         <% end %>
-        <%= render "comments/form", comment: @comment%>
+        <%= render "remarks/form", remark: @remark%>
     </div>
 </div>

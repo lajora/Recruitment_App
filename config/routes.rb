@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     patch '/reject', to:'job_applications#reject', on: :member
     patch '/reject_offer', to:'job_applications#reject_offer', on: :member
     patch '/accept_offer', to:'job_applications#accept_offer', on: :member
-    resources :comments
+    resources :remarks
   end
   
 end
