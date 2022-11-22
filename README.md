@@ -1,24 +1,12 @@
 # README
+Jobstantial
+Where you’ll consistently find work to boost your professional stability.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Jobstantial offers a platform which commits to continuously offering temporary work with renowned companies so that essential workers enjoy professional stability and companies accelerate their business growth as they enjoy increased flexibility.
 
-* Ruby version
+As a business, this platform allows you to efficiently select the right candidates and to manage the recruitment cycle for temporary work positions to reduce the time-to-hire. 
 
-* System dependencies
+As a candidate, this platform allows you to search for temporary work which suits your personal working requirements and allows you to eliminate the time between jobs.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This application adapts recruitment processes to the current changes in the labor market and creates a win win for workers and employers.
