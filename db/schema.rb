@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_22_102158) do
+ActiveRecord::Schema.define(version: 2022_11_22_104022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2022_11_22_102158) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "job_applications"
   add_foreign_key "comments", "users"
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "job_applications", "users"
