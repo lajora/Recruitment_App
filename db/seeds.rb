@@ -62,6 +62,28 @@ job4 = Job.new(title: 'Backend Node js.', description: 'Rebuilding of the groupâ
             years_of_experience: rand(0..10), working_hours: "40 hours per week", 
             salary: rand(7..15), user_id: lara.id)
 job4.save
+
+99.times do |job| 
+    title = Faker::Job.title
+    description = Faker::IndustrySegments.industry
+    location = Faker::Address.city
+    start_date = Faker::Date.backward(days: 14)
+    end_date = Faker::Date.forward(days: 23)
+    years_of_experience = rand(0..10)
+    working_hours = rand(10..40)
+    salary = rand(7..15)
+    user_id = lara.id
+    Job.create!(title: title,
+                description: description,
+                location: location,
+                start_date: start_date,
+                end_date: end_date,
+                working_hours: working_hours,
+                salary: salary,
+                user_id: user_id)
+end
+
+
 #job applications
 puts 'Creating job applications'
 
