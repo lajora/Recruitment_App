@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2022_11_22_113935) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "application_id", null: false
-    t.index ["application_id"], name: "index_comments_on_application_id"
+    t.bigint "user_id", null: false
+    t.bigint "job_application_id", null: false
+    t.index ["job_application_id"], name: "index_comments_on_job_application_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "job_applications", force: :cascade do |t|
@@ -86,7 +88,8 @@ ActiveRecord::Schema.define(version: 2022_11_22_113935) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "job_applications", column: "application_id"
+  add_foreign_key "comments", "job_applications"
+  add_foreign_key "comments", "users"
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "job_applications", "users"
   add_foreign_key "jobs", "users"

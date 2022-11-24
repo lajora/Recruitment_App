@@ -1,5 +1,6 @@
 <div class="container-job">
     <h1>These are the current job opportunities:</h1>
+    <%= will_paginate %>
     <% @jobs.each do |job| %>
         <%= link_to job_path(job), class:"card-links" do %>
             <div class="card-job">
@@ -11,6 +12,7 @@
             </div>
         <% end %>
     <% end %>
+    <%= will_paginate %>
 </div>
 
     
